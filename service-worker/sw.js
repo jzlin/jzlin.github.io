@@ -2,7 +2,7 @@ console.log("running sw.js");
 
 var CACHE_NAME = 'v1';
 var urlsToCache = [
-  '/service-worker/index.html',
+  '/service-worker/',
 ];
 
 self.addEventListener('install', function(event) {
