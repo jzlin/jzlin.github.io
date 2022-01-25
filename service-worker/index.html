@@ -30,7 +30,7 @@
         (() => {
             const fetchButton = document.getElementById('fetchButton');
             fetchButton.onclick = (event) => {
-                fetch({ url: '/service-worker/data.json', method: 'GET' })
+                fetch('/service-worker/data.json')
                     .then((res) => {
                         var data = res.json();
                         console.log({ data });
