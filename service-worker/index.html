@@ -33,6 +33,8 @@
                 fetch('/service-worker/data.json')
                     .then((res) => {
                         var data = res.json();
+                    })
+                    .then((data) => {
                         console.log({ data });
                     })
                     .catch((err) => {
