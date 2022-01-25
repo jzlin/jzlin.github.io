@@ -18,6 +18,9 @@ self.addEventListener('install', function(event) {
 
 self.addEventListener('fetch', function(event) {
   console.log('fetch event: ', event);
+  if (event.request.url.includes('data.json')) {
+    Object.assign(event.request.headers, { Referer: 'https://jzlin.github.io/service-worker/test/' })
+  }
   event.respondWith(
     caches.match(event.request)
       .then(function(response) {
