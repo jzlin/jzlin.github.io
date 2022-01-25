@@ -32,7 +32,7 @@
             fetchButton.onclick = (event) => {
                 fetch('/service-worker/data.json')
                     .then((res) => {
-                        var data = res.json();
+                        return res.json();
                     })
                     .then((data) => {
                         console.log({ data });
