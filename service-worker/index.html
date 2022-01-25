@@ -25,5 +25,21 @@
             console.log('service worker is not support! ❌');
         }
     </script>
+    <button id="fetchButton">fetch</button>
+    <script>
+        (() => {
+            const fetchButton = document.getElementById('fetchButton');
+            fetchButton.onclick = (event) => {
+                fetch({ url: '/service-worker/data.json', method: 'GET' })
+                    .then((res) => {
+                        var data = res.json();
+                        console.log({ data });
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    })
+            };
+        })();
+    </script>
 </body>
 </html>
